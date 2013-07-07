@@ -4,13 +4,10 @@ var indexFilename = "./index.html";
 
 var app = express.createServer(express.logger());
 var buf = fs.readFileSync(indexFilename);
+var str = buf.toString();
 
 app.get('/', function(request, response) {
-  response.set('Content-Type', 'text/html');
-  response.send(buf);	
-/*
-  response.send('Hello World 2!');
-*/
+  response.send(str);	
 });
 
 var port = process.env.PORT || 5000;
