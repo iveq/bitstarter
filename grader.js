@@ -28,7 +28,7 @@ var rest = require('restler');
 
 var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
-var URL_DEFAULT = "http://fierce-reaches-1073.herokuapp.com";
+var MY_HEROKU_APP_URL = "http://lit-headland-1898.herokuapp.com";
 
 
 var assertFileExists = function(infile) {
@@ -80,7 +80,7 @@ if(require.main == module) {
     program 
       .version('0.333')
       .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
-      .option('-u, --url <url>', 'URL input', URL_DEFAULT)
+      .option('-u, --url <url>', 'URL input', MY_HEROKU_APP_URL)
       .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
     program
       .command('checkUrl')
